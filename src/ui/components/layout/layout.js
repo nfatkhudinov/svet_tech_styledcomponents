@@ -49,12 +49,12 @@ const FooterContainer = styled.div`
 `
 
 
-const Layout = () => {
+const Layout = (props) => {
     return (
         <Container>
             <HeaderContainer><Header/></HeaderContainer>
             <SidebarContainer>Sidebar</SidebarContainer>
-            <ContentContainer>Content</ContentContainer>
+            <ContentContainer>{props.children}</ContentContainer>
             <FooterContainer>Footer</FooterContainer>
         </Container>
     );

@@ -2,8 +2,9 @@ import React from 'react';
 import styled from "styled-components";
 import logoImage from "./logo.svg";
 import logoImage_sm from "./logo_sm.svg";
+import Link from "next/link";
 
-const LogoContainer = styled.a`
+const LogoContainer = styled(Link)`
   background-color: white;
   background-image: url(${logoImage.src});
   background-repeat: no-repeat;
@@ -28,9 +29,10 @@ const LogoContainer = styled.a`
     order: 2;
   };
 `
+
 const Logo = (props) => {
     return (
-            <LogoContainer {...props} href={props.href}/>
+        <LogoContainer {...props} href={'/'}></LogoContainer>
     );
 };
 

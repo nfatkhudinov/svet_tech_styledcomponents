@@ -1,5 +1,8 @@
-import React from 'react';
 import styled from "styled-components"
+import {apiResponceMenu} from "@/api/api";
+import Link from "next/link";
+import {useRouter} from "next/router";
+
 
 const TopmenuContainer = styled.nav`
     display: flex;
@@ -14,25 +17,29 @@ const TopmenuContainer = styled.nav`
   };
 `
 
-const MenuItem = styled.a`
+const MenuItem = styled(Link)`
   font-family: 'DIN Next W1G';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
-  line-height: 120%;    
-  text-decoration: ${props=>props.$active?"underline":"none"};
+  line-height: 120%;
+  color: black;
+  text-decoration: none;
+  text-decoration: ${props=>(props.$active? `underline`:`none`)};
 `
+
+
 const Topmenu = () => {
+    const pathname  = useRouter();
+    console.log(pathname.asPath)
+    const renderMenuItems=apiResponceMenu.map(i=>
+        <MenuItem $active={i.link===pathname.asPath} key={i.title.toString()} href={i.link}>{i.title}</MenuItem>
+    )
+
 
     return (
         <TopmenuContainer>
-            <MenuItem $active={true}>каталог</MenuItem>
-            <MenuItem>решения</MenuItem>
-            <MenuItem>учебный центр</MenuItem>
-            <MenuItem>услуги</MenuItem>
-            <MenuItem>о компании</MenuItem>
-            <MenuItem>портфолио</MenuItem>
-            <MenuItem>дистрибьюторы</MenuItem>
+            {renderMenuItems}
         </TopmenuContainer>
     );
 };

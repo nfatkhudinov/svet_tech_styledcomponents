@@ -5,6 +5,7 @@ import Topmenu from "@/ui/components/header/topmenu";
 import Button from "@/ui/components/button/button";
 import Burgermenu from "@/ui/components/header/burgermenu";
 import {useState} from "react";
+import {apiResponceMenu} from "@/api/api";
 
 const HeaderContainer = styled.header`
   background-color: white;
@@ -26,11 +27,12 @@ const Header = (props) => {
     const [showBurger, setShowBurger] = useState(false);
 
 
+
     return (
         <>
-        <HeaderContainer>
+        <HeaderContainer {...props}>
             <Button $burgermenu={true} onClick={()=>setShowBurger(!showBurger)}/>
-            <Logo href={"/#"}/>
+            <Logo/>
             <Topmenu/>
             <Button $searchbutton={true}/>
             <Button $likebutton={true}/>
