@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 
 const Burgermenucontainer = styled.div`
-  display: ${props => props.display? `block` : `none`};
+  display: ${props => props.$display? `block` : `none`};
   position: fixed;
   width: 768px;
   height: 100%;

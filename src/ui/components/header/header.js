@@ -36,7 +36,7 @@ const Header = (props) => {
             <Button $likebutton={true}/>
             <Button $langbutton={true}/>
         </HeaderContainer>
-    <Burgermenu display={showBurger}/>
+    <Burgermenu $display={showBurger}/>
         </>
     );
 };
