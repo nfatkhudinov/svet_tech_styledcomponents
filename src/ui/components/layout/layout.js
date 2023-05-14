@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import Header from "@/ui/components/header/header";
+import Sidebar from "@/ui/components/sidebar/sidebar";
 
 const Container = styled.div`
   display: grid;
@@ -10,8 +11,6 @@ const Container = styled.div`
                   "footer footer";
   grid-template-columns: 257px 1fr;
   grid-template-rows: 80px 1fr 446px;
-  
-  background-color: aliceblue;
   width: 1440px;
   @media (max-width: 1440px) {
     width: 768px;
@@ -53,7 +52,7 @@ const Layout = (props) => {
     return (
         <Container>
             <HeaderContainer><Header/></HeaderContainer>
-            <SidebarContainer>Sidebar</SidebarContainer>
+            <SidebarContainer><Sidebar/></SidebarContainer>
             <ContentContainer>{props.children}</ContentContainer>
             <FooterContainer>Footer</FooterContainer>
         </Container>

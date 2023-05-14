@@ -31,7 +31,6 @@ const MenuItem = styled(Link)`
 
 const Topmenu = () => {
     const pathname  = useRouter();
-    console.log(pathname.asPath)
     const renderMenuItems=apiResponceMenu.map(i=>
         <MenuItem $active={i.link===pathname.asPath} key={i.title.toString()} href={i.link}>{i.title}</MenuItem>
     )

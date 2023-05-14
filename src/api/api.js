@@ -28,3 +28,38 @@ export const apiResponceMenu = [
         "link": "/distributors"
     }
 ]
+
+export const apiResponceSidebar_2 = [
+    {
+        "title": "описание",
+        "link": "#"
+    },
+    {
+        "title": "подробнее",
+        "link": "#"
+    },
+    {
+        "title": "идеи",
+        "link": "#"
+    },
+    {
+        "title": "задачи",
+        "link": "#"
+    },
+    {
+        "title": "свет, который мотивирует",
+        "link": "#"
+    },
+    {
+        "title": "рекомендуемые товары",
+        "link": "#"
+    },
+    {
+        "title": "связаться с нами",
+        "link": "#"
+    },
+    {
+        "title": "проекты",
+        "link": "#"
+    }
+]
